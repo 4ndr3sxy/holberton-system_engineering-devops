@@ -1,0 +1,1 @@
+this project content scripts to shells permissions
