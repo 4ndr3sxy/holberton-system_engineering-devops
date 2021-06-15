@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -Eo '^[^ ]' <
+cut -b 1 testAcronimo
