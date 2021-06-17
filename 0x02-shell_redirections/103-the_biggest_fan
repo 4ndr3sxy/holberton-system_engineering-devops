@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $( sort | cut -f 1 | uniq -c | sort -nr | head -11 | cut -d " " -f 6 )
+sort | cut -f 1 | uniq -c | sort -nr | head -11 | cut -d " " -f 6
