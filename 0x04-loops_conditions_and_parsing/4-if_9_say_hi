@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script is displaying "Best School" 10 times with while
+# This script is displaying "Best School" 10 times with while and HI if i == 8
 i=0
 while [ $i -le 9 ]
 do

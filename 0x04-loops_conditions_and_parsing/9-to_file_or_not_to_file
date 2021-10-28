@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script is displaying "Best School" 10 times with while
+# This script is to validate information of a file
 file=school
 if test -e "$file"; then
     echo "school file exists"

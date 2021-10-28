@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script is displaying "Best School" 10 times with while
+# This script is displaying numbers bad luck and good luck
 i=0
 while [ $i -le 9 ]
 do

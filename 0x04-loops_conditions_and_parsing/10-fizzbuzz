@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script is displaying "Best School" 10 times with for
+# This script is displaying the seria FizzBuzz
 for ((i=1; i<=100; i++)) do
     if [ $((i % 15)) == 0 ]
     then
