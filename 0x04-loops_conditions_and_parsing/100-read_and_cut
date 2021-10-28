@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times with while
+
+cat < /etc/passwd |
+while read -r
+do
+    result="$(cut -d ':' -f1,3,6)"
+    echo "$result"
+done
