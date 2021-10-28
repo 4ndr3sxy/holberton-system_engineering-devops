@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times with while
+LIST="$(ls)"
+for value in $LIST
+do
+    result="$( echo "$value" | cut -d '-' -f 2)"
+    echo "$result"
+done
