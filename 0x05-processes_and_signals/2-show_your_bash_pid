@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#This script list all process currently and that contain the word 'bash'
+# shellcheck disable=SC2009
+ps -auxf | grep 'bash'
