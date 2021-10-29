@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#This script kill  a PID using pkill
+pkill -9 -f 'bash ./7-highlander'
+
