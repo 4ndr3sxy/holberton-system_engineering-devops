@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#This script displays "To infinity and beyond" indefinitely
+_no_kill_term() {
+  echo "I hate the kill command"
+  exit
+}
+_no_kill_int() {
+  echo "Y U no love me?!"
+}
+
+trap _no_kill_term SIGTERM
+trap _no_kill_int SIGINT
+trap "rm /var/run/my.pid; exit" SIGQUIT SIGTERM
+
+file="/var/run/myscript.pid"
+echo "$$" > "$file"
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
