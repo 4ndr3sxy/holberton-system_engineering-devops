@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#This script displays "To infinity and beyond" indefinitely
+#This script displays "To infinity and beyond" using trap to SIGTERM SIGQUIT and SIGINT
 _no_kill_term() {
   echo "I hate the kill command"
   rm /var/run/my.pid
