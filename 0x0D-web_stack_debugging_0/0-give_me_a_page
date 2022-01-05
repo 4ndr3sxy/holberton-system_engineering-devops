@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Whatever needed to be fixed (here is your mission),
+sudo service apache2 start
