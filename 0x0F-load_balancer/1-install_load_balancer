@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Install HAproxy and config load balancer
+sudo add-apt-repository -y ppa:vbernat/haproxy-1.7
 sudo apt-get -y update
 sudo apt-get -y install haproxy
 FIRST_PATH="errorfile 504"
