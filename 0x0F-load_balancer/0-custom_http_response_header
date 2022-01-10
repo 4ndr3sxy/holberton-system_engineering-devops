@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# add header X-Served-By
+FIRST_PATH="server_name _;"
+FIRST_PATH_TWO="\n\tadd_header  X-Served-By  $(hostname);\n\n"
+SECOND_PATH="/etc/nginx/sites-available/default"
+sudo sed -i "/$FIRST_PATH/a\\$FIRST_PATH_TWO" $SECOND_PATH
+sudo service nginx restart
