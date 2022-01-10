@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Install HAproxy and config load balancer
+sudo apt-get -y update
+sudo apt-get -y install haproxy
+FIRST_PATH="errorfile 504"
+FIRST_PATH_TWO="frontend http_front\n\tbind *:80\n\tstats uri /haproxy?stats\n\tdefault_backend http_back\nbackend http_back\n\tbalance roundrobin\n\tserver web-01 34.138.80.184:80 check\n\tserver web-02 34.203.28.213:80 check"
+SECOND_PATH="/etc/haproxy/haproxy.cfg"
+sudo sed -i "/$FIRST_PATH/a$FIRST_PATH_TWO" $SECOND_PATH
