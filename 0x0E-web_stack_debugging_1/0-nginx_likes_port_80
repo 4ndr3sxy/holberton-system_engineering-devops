@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # listen port 80
-PATHSED="/etc/nginx/sites-available/default"
-sed -i "s/8080/80/g" $PATHSED
-service nginx restart
+sed -i "s/8080/80/g" /etc/nginx/sites-available/default
+sudp service nginx restart
