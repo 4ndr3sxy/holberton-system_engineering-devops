@@ -8,6 +8,9 @@ global
         group haproxy
         daemon
 
+        maxconn 2048
+        tune.ssl.default-dh-param 2048
+
         # Default SSL material locations
         ca-base /etc/ssl/certs
         crt-base /etc/ssl/private
@@ -22,6 +25,10 @@ defaults
         mode    http
         option  httplog
         option  dontlognull
+
+        option forwardfor
+        option http-server-close
+
         timeout connect 5000
         timeout client  50000
         timeout server  50000
@@ -48,3 +55,6 @@ backend http_back
         redirect scheme https if !{ ssl_fc }
         server web-01 34.138.80.184:80 check
         server web-02 34.139.204.147:80 check
+
+backend letsencrypt-backend
+        server letsencrypt 127.0.0.1:54321
