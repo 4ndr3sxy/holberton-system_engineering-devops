@@ -18,7 +18,7 @@ if __name__ == "__main__":
             (sys.argv[1]))
     req = requests.get(page)
 
-    with open("{}.csv', mode='w'".format(sys.argv[1])) as employee_file:
+    with open("{}.csv".format(sys.argv[1]), mode='w') as employee_file:
         employee_writer = csv.writer(
             employee_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
 
