@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Get info of get information using API REST FULL"""
+"""Get info of get information using API REST FULL
+Get info of get information using API REST FULL
+Get info of get information using API REST FULL"""
 import requests
 import sys
 
