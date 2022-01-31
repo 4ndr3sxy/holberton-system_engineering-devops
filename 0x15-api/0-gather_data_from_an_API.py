@@ -23,6 +23,6 @@ if __name__ == "__main__":
             task_complete += 1
             array_task_complete.append(task.get('title'))
     print(
-        f'Employee Ervin Howell is done with tasks({task_complete}/{tasks}):')
+        f'Employee {employee} is done with tasks({task_complete}/{tasks}):')
     for task in array_task_complete:
         print(f'\t{task}')
