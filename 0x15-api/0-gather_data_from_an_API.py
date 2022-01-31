@@ -3,7 +3,7 @@
 Get info of get information using API REST FULL
 Get info of get information using API REST FULL"""
 import requests
-import sys
+from sys import argv
 
 
 if __name__ == "__main__":
@@ -11,13 +11,13 @@ if __name__ == "__main__":
     task_complete = 0
     array_task_complete = []
     tasks = 0
-    page = "https://jsonplaceholder.typicode.com/users/{}".format(sys.argv[1])
+    page = "https://jsonplaceholder.typicode.com/users/{}".format(argv[1])
 
     req = requests.get(page)
     employee = req.json()['name']
 
     page = ("https://jsonplaceholder.typicode.com/todos?userId={}".format
-            (sys.argv[1]))
+            (argv[1]))
     req = requests.get(page)
     for task in req.json():
         tasks += 1
