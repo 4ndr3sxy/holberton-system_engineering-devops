@@ -31,5 +31,5 @@ if __name__ == "__main__":
     dict_user[str(sys.argv[1])] = array_tasks
     json_object = json.dumps(dict_user)
 
-    with open(f"{sys.argv[1]}.json", "w") as outfile:
+    with open("{}.json".format(sys.argv[1]), "w") as outfile:
         outfile.write(json_object)
