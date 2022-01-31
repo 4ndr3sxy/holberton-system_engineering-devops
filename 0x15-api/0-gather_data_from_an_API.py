@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """Get info of https://jsonplaceholder.typicode.com"""
-
-
 import requests
 import sys
 
+
 if __name__ == "__main__":
+    """Init to use rest api full"""
     employee = ''
     task_complete = 0
     array_task_complete = []
