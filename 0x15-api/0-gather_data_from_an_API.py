@@ -22,7 +22,8 @@ if __name__ == "__main__":
         if task.get('completed') is True:
             task_complete += 1
             array_task_complete.append(task.get('title'))
-    print(
-        f'Employee {employee} is done with tasks({task_complete}/{tasks}):')
+    print("Employee {} is done with tasks({}/{}):".format(employee,
+                                                          task_complete,
+                                                          tasks))
     for task in array_task_complete:
-        print(f'\t{task}')
+        print("\t", task)
