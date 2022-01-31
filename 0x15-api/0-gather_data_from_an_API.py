@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""Get info of get information using API REST FULL
-Get info of get information using API REST FULL
-Get info of get information using API REST FULL"""
+"""Returns information about a employee with a given ID"""
 import requests
 from sys import argv
 
