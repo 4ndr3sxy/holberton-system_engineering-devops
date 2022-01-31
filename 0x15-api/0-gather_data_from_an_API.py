@@ -1,28 +1,28 @@
 #!/usr/bin/python3
-"""Get info of get information using API REST FULL"""
+"""Returns information about a employee with a given ID"""
 import requests
-import sys
+from sys import argv
 
+if __name__ == '__main__':
+    employee_id = int(argv[1])
 
-if __name__ == "__main__":
-    employee = ''
-    task_complete = 0
-    array_task_complete = []
-    tasks = 0
-    page = "https://jsonplaceholder.typicode.com/users/{}".format(sys.argv[1])
+    resp = requests.get('https://jsonplaceholder.typicode.com/todos/')
+    json_repr = resp.json()
+    name_resp = requests.get('https://jsonplaceholder.typicode.com/users/{}'
+                        .format(employee_id))
+    name = name_resp.json().get('name')
+    tasks_done, total_task = 0, 0
 
-    req = requests.get(page)
-    employee = req.json()['name']
-
-    page = ("https://jsonplaceholder.typicode.com/todos?userId={}".format
-            (sys.argv[1]))
-    req = requests.get(page)
-    for task in req.json():
-        tasks += 1
-        if task.get('completed') is True:
-            task_complete += 1
-            array_task_complete.append(task.get('title'))
-    print(
-        f'Employee Ervin Howell is done with tasks({task_complete}/{tasks}):')
-    for task in array_task_complete:
-        print(f'\t{task}')
+    for task in json_repr:
+        if task.get('userId') == employee_id:
+            total_task = total_task + 1
+            if task.get('completed') is True:
+                tasks_done = tasks_done + 1
+    print('Employee {} is done with tasks({}/{}):'.format(
+        name,
+        tasks_done,
+        total_task
+        ))
+    for task in json_repr:
+        if task.get('userId') == employee_id and task.get('completed') is True:
+            print("\t " + task.get('title'))
