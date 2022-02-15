@@ -13,7 +13,7 @@ def top_ten(subreddit):
     if response.status_code == 404:
         print(None)
     else:
-        info = json.loads(response.content)
+        info = response.json()
         count = 0
         for post in info.get('data').get('children'):
             print(post.get('data').get('title'))
