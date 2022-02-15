@@ -9,7 +9,8 @@ def number_of_subscribers(subreddit):
     user_agent = {'User-agent': 'Mozilla/5.0',
                   "Content-Type": "application/json"}
     page = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    response = requests.get(page, headers=user_agent)
+    response = requests.get(page, headers=user_agent,
+                            allow_redirects=False)
     if response.status_code == 200:
         info = json.loads(response.content)
         return info['data']['subscribers']
