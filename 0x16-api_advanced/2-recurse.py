@@ -14,15 +14,16 @@ def recurse(subreddit, hot_list=[], idx=0, response=None, after=''):
     if response.status_code == 301:
         return None
     elif response.status_code == 200:
-        info = json.loads(response.content)
-        if idx >= len(info['data']['children']):
-            if info['data']['after'] is not None:
-                after = '?after=' + info['data']['after']
+        info = response.json()
+        if idx >= len(info.get('data').get('children')):
+            if info.get('data').get('after') is not None:
+                after = '?after=' + info.get('data').get('after')
                 idx = 0
                 return recurse(subreddit, hot_list, idx, response, after)
             else:
                 return hot_list
-        hot_list.append(info['data']['children'][idx]['data']['title'])
+        hot_list.append((info.get('data').get('children')[idx]
+                         .get('data').get('title')))
         idx += 1
         return recurse(subreddit, hot_list, idx, response, after)
     else:
