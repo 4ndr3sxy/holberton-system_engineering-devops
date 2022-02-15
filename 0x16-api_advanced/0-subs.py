@@ -6,7 +6,8 @@ import requests
 
 def number_of_subscribers(subreddit):
     """Structure using module requests"""
-    user_agent = {'User-agent': 'Mozilla/5.0'}
+    user_agent = {'User-agent': 'Mozilla/5.0',
+                  "Content-Type": "application/json"}
     page = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     response = requests.get(page, headers=user_agent)
     if response.status_code == 200:
